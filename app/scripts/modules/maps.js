@@ -6,113 +6,59 @@ var $ = require('jquery');
 var defaults = {
 	zoom: 15,
 	mapTypeId: google.maps.MapTypeId.ROADMAP,
-	styles: [{ // http://snazzymaps.com/style/29/light-monochrome
-		'featureType': 'water',
-		'elementType': 'all',
-		'stylers': [{
-			'hue': '#e9ebed'
-		}, {
-			'saturation': -78
-		}, {
-			'lightness': 67
-		}, {
-			'visibility': 'simplified'
-		}]
-	}, {
+	styles: [{ // http://snazzymaps.com/style/80/cool-grey
 		'featureType': 'landscape',
-		'elementType': 'all',
+		'elementType': 'labels',
 		'stylers': [{
-			'hue': '#ff00ff'
-		}, {
-			'saturation': -100
-		}, {
-			'lightness': 100
-		}, {
-			'visibility': 'simplified'
-		}]
-	}, {
-		'featureType': 'road',
-		'elementType': 'geometry',
-		'stylers': [{
-			'hue': '#bbc0c4'
-		}, {
-			'saturation': -93
-		}, {
-			'lightness': 31
-		}, {
-			'visibility': 'simplified'
-		}]
-	}, {
-		'featureType': 'poi',
-		'elementType': 'all',
-		'stylers': [{
-			'hue': '#00ffff'
-		}, {
-			'saturation': -100
-		}, {
-			'lightness': 100
-		}, {
 			'visibility': 'off'
 		}]
 	}, {
-		'featureType': 'road.local',
-		'elementType': 'geometry',
-		'stylers': [{
-			'hue': '#e9ebed'
-		}, {
-			'saturation': -90
-		}, {
-			'lightness': -8
-		}, {
-			'visibility': 'simplified'
-		}]
-	}, {
 		'featureType': 'transit',
-		'elementType': 'all',
+		'elementType': 'labels',
 		'stylers': [{
-			'hue': '#e9ebed'
-		}, {
-			'saturation': 10
-		}, {
-			'lightness': 69
-		}, {
-			'visibility': 'on'
+			'visibility': 'off'
 		}]
 	}, {
-		'featureType': 'administrative.locality',
-		'elementType': 'all',
+		'featureType': 'poi',
+		'elementType': 'labels',
 		'stylers': [{
-			'hue': '#2c2e33'
-		}, {
-			'saturation': 7
-		}, {
-			'lightness': 19
-		}, {
-			'visibility': 'on'
+			'visibility': 'off'
+		}]
+	}, {
+		'featureType': 'water',
+		'elementType': 'labels',
+		'stylers': [{
+			'visibility': 'off'
 		}]
 	}, {
 		'featureType': 'road',
-		'elementType': 'labels',
+		'elementType': 'labels.icon',
 		'stylers': [{
-			'hue': '#bbc0c4'
-		}, {
-			'saturation': -93
-		}, {
-			'lightness': 31
-		}, {
-			'visibility': 'on'
+			'visibility': 'off'
 		}]
 	}, {
-		'featureType': 'road.arterial',
-		'elementType': 'labels',
 		'stylers': [{
-			'hue': '#bbc0c4'
+			'hue': '#00aaff'
 		}, {
-			'saturation': -93
+			'saturation': -100
 		}, {
-			'lightness': -2
+			'gamma': 2.15
 		}, {
-			'visibility': 'simplified'
+			'lightness': 12
+		}]
+	}, {
+		'featureType': 'road',
+		'elementType': 'labels.text.fill',
+		'stylers': [{
+			'visibility': 'on'
+		}, {
+			'lightness': 24
+		}]
+	}, {
+		'featureType': 'road',
+		'elementType': 'geometry',
+		'stylers': [{
+			'lightness': 57
 		}]
 	}]
 };
@@ -120,9 +66,9 @@ var defaults = {
 $(window).load(function() {
 	$('[map]').each(function() {
 		var latLng = $(this).attr('map').split(','),
-		settings = $.extend({}, defaults, {
-			center: new google.maps.LatLng(parseFloat(latLng[0]), parseFloat(latLng[1])),
-		});
+			settings = $.extend({}, defaults, {
+				center: new google.maps.LatLng(parseFloat(latLng[0]), parseFloat(latLng[1])),
+			});
 
 		new google.maps.Map(this, settings);
 	});

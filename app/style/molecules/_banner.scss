@@ -13,6 +13,8 @@
 	background-size: cover;
 }
 .banner__content {
+	padding: 0 em($base-line-height);
+
 	position: absolute;
 	top: 50%;
 	right: 0;
@@ -34,4 +36,24 @@
 
 	position: relative;
 	z-index: 1;
+}
+// Media queries
+@include media(tabletH) {
+	.banner__text {
+		@include adjust-font-size-to(scaled-value(6));
+	}
+}
+@include media(mobileH) {
+	.banner__content {
+		padding: em($base-line-height * 3) em($base-line-height) 0;
+		position: static;
+
+		@include transform(none);
+	}
+	.banner__text {
+		@include adjust-font-size-to(scaled-value(5));
+	}
+	.banner__spacer {
+		display: none;
+	}
 }

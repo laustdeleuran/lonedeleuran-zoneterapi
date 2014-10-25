@@ -11,3 +11,18 @@
 	@include adjust-font-size-to(scaled-value(5), 5);
 	text-align: center;
 }
+// Media queries
+@include media(mobileH) {
+	.call-to-action {
+		margin: em($base-line-height * 2, scaled-value(4)) auto;
+
+		@include adjust-font-size-to(scaled-value(4), 4);
+	}
+}
+@include media(mobileV) {
+	.call-to-action {
+		margin: em($base-line-height * 2, scaled-value(3)) auto;
+
+		@include adjust-font-size-to(scaled-value(3));
+	}
+}

@@ -19,3 +19,9 @@
 		color: $color-white;
 	}
 }
+// Media queries
+@include media(mobileV) {
+	.block {
+		padding: em($base-line-height * 2) 0;
+	}
+}

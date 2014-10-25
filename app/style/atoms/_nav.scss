@@ -6,10 +6,12 @@
 */
 .nav {
 	overflow: hidden;
+	margin: 0 -0.5em;
 }
 .nav__link {
-	margin-left: 1em;
+	margin: 0 0.5em;
 	border-color: transparent;
+	display: inline-block;
 
 	font-weight: 300;
 

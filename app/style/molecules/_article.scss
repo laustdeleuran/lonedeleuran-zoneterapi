@@ -26,3 +26,24 @@
 	@include trailer(4, scaled-value(6));
 	@include adjust-font-size-to(scaled-value(6));
 }
+// Media queries
+@include media(tabletV) {
+	.article__title {
+		@include leader(4, scaled-value(5), 'padding');
+		@include trailer(4, scaled-value(5));
+		@include adjust-font-size-to(scaled-value(5));
+	}
+}
+@include media(mobileH) {
+	.article__title {
+		@include leader(0, scaled-value(4), 'padding');
+		@include trailer(2, scaled-value(4));
+		@include adjust-font-size-to(scaled-value(4));
+	}
+	.article__image {
+		float: none;
+		width: auto;
+		max-width: 10em;
+		margin: 0 auto em($base-line-height * 2);
+	}
+}

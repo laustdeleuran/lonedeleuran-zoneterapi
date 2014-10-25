@@ -6,7 +6,7 @@
 */
 .masthead {
 	overflow: hidden;
-	padding: em($base-line-height * 2) 0;
+	padding: em($base-line-height * 2) em($base-line-height);
 }
 .masthead__title {
 	margin: 0;
@@ -28,4 +28,39 @@
 	overflow: hidden;
 
 	text-align: right;
+}
+// Media queries
+@include media(desktop) {
+	.masthead__title {
+		@include adjust-font-size-to(scaled-value(4), 2);
+	}
+}
+@include media(tabletV) {
+	.masthead__title {
+		em {
+			display: none;
+		}
+	}
+}
+@include media(mobileH) {
+	.masthead__title {
+		float: none;
+		@include trailer(1, scaled-value(4));
+
+		@include adjust-font-size-to(scaled-value(4), 2);
+
+		em {
+			display: inline-block;
+		}
+	}
+	.masthead__nav { 
+		text-align: left;
+	}
+}
+@include media(mobileH) {
+	.masthead__title {
+		em {
+			display: none;
+		}
+	}
 }

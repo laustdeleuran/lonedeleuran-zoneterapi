@@ -1,0 +1,13 @@
+/**
+* Call to action
+*
+* @section atoms
+* @author  ljd
+*/
+.call-to-action {
+	margin: em($base-line-height * 2, scaled-value(5)) auto;
+	max-width: 15em;
+
+	@include adjust-font-size-to(scaled-value(5), 5);
+	text-align: center;
+}

@@ -1,0 +1,23 @@
+/**
+* Nav
+*
+* @section atoms
+* @author  ljd
+*/
+.nav {
+	overflow: hidden;
+}
+.nav__link {
+	margin-left: 1em;
+	border-color: transparent;
+
+	font-weight: 300;
+
+	&:hover,
+	&:focus,
+	&:active {
+		border-color: $color-green;
+		
+		color: $color-green;
+	}
+}

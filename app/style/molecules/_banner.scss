@@ -1,0 +1,37 @@
+/**
+* Banner
+*
+* @section molecules
+* @author  ljd
+*/
+.banner {
+	overflow: hidden;
+
+	position: relative;
+
+	background: $color-grey-light url(../images/content/banner-1.jpg) center center no-repeat;
+	background-size: cover;
+}
+.banner__content {
+	position: absolute;
+	top: 50%;
+	right: 0;
+	left: 0;
+	z-index: 2;
+
+	@include transform(translateY(-50%));
+}
+.banner__text {
+	margin: 0;
+
+	@include adjust-font-size-to(scaled-value(7));
+	font-family: $font-stack-script;
+}
+.banner__spacer {
+	display: block;
+	width: 100%;
+	height: auto;
+
+	position: relative;
+	z-index: 1;
+}

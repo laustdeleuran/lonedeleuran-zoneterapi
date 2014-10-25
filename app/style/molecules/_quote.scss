@@ -1,0 +1,31 @@
+/**
+* Quote
+*
+* @section molecules
+* @author  ljd
+*/
+.quote {
+	margin: 0;
+	overflow: hidden;
+
+	text-align: center;
+}
+.quote__content {
+	max-width: 40em;
+	margin: 0	auto;
+
+	font-style: italic;
+	font-weight: 300;
+	color: $color-green;
+
+	p {
+		margin: 0;
+	}
+}
+.quote__source {
+	display: block;
+	margin-top: em($base-line-height * 2, scaled-value(4));
+
+	@include adjust-font-size-to(scaled-value(5), 2);
+	font-family: $font-stack-script;
+}

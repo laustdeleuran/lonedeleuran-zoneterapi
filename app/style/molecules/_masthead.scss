@@ -1,0 +1,31 @@
+/**
+* Masthead
+*
+* @section molecules
+* @author  ljd
+*/
+.masthead {
+	overflow: hidden;
+	padding: em($base-line-height * 2) 0;
+}
+.masthead__title {
+	margin: 0;
+	float: left;
+
+	position: relative;
+	bottom: -0.2em; // Fix baseline on Montague Regular
+
+	@include adjust-font-size-to(scaled-value(5), 2);
+	font-family: $font-stack-script;
+	vertical-align: bottom;
+
+	em {
+		color: $color-green;
+		font-style: normal;
+	}
+}
+.masthead__nav {
+	overflow: hidden;
+
+	text-align: right;
+}

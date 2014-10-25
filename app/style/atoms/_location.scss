@@ -1,0 +1,24 @@
+/**
+* Location
+*
+* @section atoms
+* @author  ljd
+*/
+.location {
+	font-weight: 300;
+
+	p {
+		margin: 0;
+	}
+}
+.location__map {
+	height: 200px;
+
+	background: $color-grey-light;
+}
+.location__title {
+	margin: 0;
+
+	font-size: 1em;
+	font-weight: 700;
+}

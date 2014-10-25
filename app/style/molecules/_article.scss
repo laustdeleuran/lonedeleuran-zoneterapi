@@ -1,0 +1,28 @@
+/**
+* Article
+*
+* @section molecules
+* @author  ljd
+*/
+.article {}
+.article__image {
+	width: 50%;
+	float: right;
+	margin: 0 0 em($base-line-height * 2) em($base-line-height * 2);
+	overflow: hidden;
+
+
+	img {
+		display: block;
+		margin: 0 auto;
+		max-width: 100%;
+		height: auto;
+
+		border-radius: 100%;
+	}
+}
+.article__title {
+	@include leader(4, scaled-value(6), 'padding');
+	@include trailer(4, scaled-value(6));
+	@include adjust-font-size-to(scaled-value(6));
+}

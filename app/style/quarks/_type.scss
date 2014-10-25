@@ -1,0 +1,44 @@
+/**
+* Typography
+*
+* @section Quarks
+* @author ljd
+*/
+h1, h2, h3, h4, h5, h6 {
+	margin: 0;
+	@include trailer(2, scaled-value(6));
+
+	@include adjust-font-size-to(scaled-value(6));
+	font-weight: 400;
+}
+h2 {
+	@include trailer(2, scaled-value(5));
+
+	@include adjust-font-size-to(scaled-value(5));
+}
+h3 {
+	@include trailer(2, scaled-value(4));
+
+	@include adjust-font-size-to(scaled-value(4));
+}
+h4, h5, h6 {
+	@include trailer(2, scaled-value(3));
+
+	@include adjust-font-size-to(scaled-value(3));
+}
+p,
+ol,
+ul,
+li,
+blockquote,
+figure,
+figcaption {
+	display: block;
+	margin: 0;
+	padding: 0;
+
+	@include trailer(2);
+}
+code {
+	font-size: 0.9em;
+}

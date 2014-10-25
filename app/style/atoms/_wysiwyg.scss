@@ -1,0 +1,142 @@
+/**
+* WYSIWYG styles
+*
+* @section Atoms
+* @author ljd
+*/
+.wysiwyg {
+	font-weight: 300;
+	
+	>:last-child {
+		margin-bottom: 0;
+	}
+	// Quotes
+	blockquote {
+		padding: em($base-line-height);
+
+		font-family: $font-stack-script;
+
+		em, 
+		strong {
+			color: $color-grey;
+		}
+		>:last-child {
+			margin-bottom: 0;
+		}
+	}
+	// Links
+	a {
+		@include transition(0s);
+
+		&:hover {
+			border-color: transparent;
+		}
+	}
+	// Rulers
+	hr {
+		display: block;
+		border: none;
+		@include leader(2);
+		@include trailer(2);
+		height: 3px;
+
+		background: $color-black;
+	}
+	// Lists
+	ul {
+		list-style: circle;
+	}
+	ol {
+		list-style: decimal;
+	}
+	li {
+		display: list-item;
+	}
+	dt {
+		font-weight: bold;
+		text-transform: uppercase;
+	}
+	// Headings
+	h1 {}
+	h2 {}
+	h3 {}
+	h4 {}
+	h5 {}
+	h6 {}
+	// Table
+	table {
+		@include trailer(2);
+	}
+	td,
+	th {
+		//border: 1px solid $color-grey-light;
+		padding: em($base-line-height * 0.5);
+
+		text-align: left;
+	}
+	// Preformatted text
+	pre {
+		max-width: 100%;
+		padding: em($base-line-height);
+		overflow: auto;
+
+
+		background: $color-grey;
+	}
+	// Embed
+	.video,
+	embed,
+	iframe,
+	object {
+		@include trailer(2);
+		display: block;
+		max-width: 35em;
+		
+		@media print {
+			display: none;
+		}
+	}
+	p {
+		.video,
+		embed,
+		iframe,
+		object {
+			max-width: 100%;
+			margin: 0 auto em($base-line-height * 2);
+		}
+	}
+}
+// Modifiers
+.wysiwyg--readable {
+	// Blocks
+	p,
+	blockquote,
+	li {
+		max-width: 35em; // ~80 chars
+	}
+}
+// Media queries
+@include media(mobileH) {
+	.wysiwyg {
+		// Quotes
+		blockquote {
+			padding: 0;
+			margin:  0 0 em($base-line-height * 2);
+		}
+		// Images
+		img {
+			display: block;
+			max-width: 100%;
+			height: auto !important;
+		}
+		// Embed
+		.video,
+		embed,
+		iframe,
+		object {
+			@include trailer(2);
+			display: block;
+			height: 180px;
+		}
+	}
+}

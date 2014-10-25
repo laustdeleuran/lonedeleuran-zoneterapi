@@ -1,0 +1,77 @@
+/**
+* Icons
+*
+* @section Quarks
+* @author ljd
+*/
+%icon {
+	font-family: 'icomoon';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	vertical-align: middle;
+	line-height: 1;
+
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+%icon--pol {
+	font-family: 'pol-icons';
+	font-style: normal;
+	font-weight: normal;
+	speak: none;
+
+	display: inline-block;
+	text-decoration: inherit;
+	width: 1em;
+	margin-right: .2em;
+	text-align: center;
+	/* opacity: .8; */
+
+	/* For safety - reset parent styles, that can break glyph codes*/
+	font-variant: normal;
+	text-transform: none;
+
+	/* fix buttons height, for twitter bootstrap */
+	line-height: 1em;
+
+	/* Animation center compensation - margins should be symmetric */
+	/* remove if not needed */
+	margin-left: .2em;
+
+	/* you can be more comfortable with increased icons size */
+	/* font-size: 120%; */
+
+	/* Uncomment for 3D effect */
+	/* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
+}
+.icon {
+	@extend %icon;
+}
+.icon--pol {
+	@extend %icon--pol;
+}
+.icon--calendar:before {
+	content: "\e600";
+}
+.icon--arrow-left:before {
+	content: "\e601";
+}
+.icon--arrow-right:before {
+	content: "\e602";
+}
+.icon--badge-star:before {
+	content: "\e603";
+}
+.icon--score-graph-smiley:before {
+	content: "\e604";
+}
+.icon--right:before { 
+	@extend %icon--pol;
+
+	content: '\e800'; 
+}
+

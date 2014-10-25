@@ -1,0 +1,21 @@
+/**
+* Block
+*
+* @section atoms
+* @author  ljd
+*/
+.block {
+	padding: em($base-line-height * 4) 0;
+	clear: both;
+}
+.block--color {
+	color: $color-white;
+
+	background-color: $color-green;
+
+	a {
+		border-color: $color-white;
+		
+		color: $color-white;
+	}
+}

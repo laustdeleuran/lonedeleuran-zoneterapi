@@ -6,6 +6,12 @@ var $ = require('jquery');
 var defaults = {
 	zoom: 15,
 	mapTypeId: google.maps.MapTypeId.ROADMAP,
+	mapTypeControl: false,
+	streetViewControl: false,
+	zoomControl: true,
+	zoomControlOptions: {
+		style: google.maps.ZoomControlStyle.SMALL
+	},
 	styles: [{ // http://snazzymaps.com/style/80/cool-grey
 		'featureType': 'landscape',
 		'elementType': 'labels',

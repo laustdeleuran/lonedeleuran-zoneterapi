@@ -42,3 +42,21 @@ figcaption {
 code {
 	font-size: 0.9em;
 }
+// Media queries 
+@include media(mobileH) {
+	h1 {
+		@include trailer(2, scaled-value(5));
+
+		@include adjust-font-size-to(scaled-value(5));
+	}
+	h2 {
+		@include trailer(2, scaled-value(4));
+
+		@include adjust-font-size-to(scaled-value(4));
+	}
+	h3 {
+		@include trailer(2, scaled-value(3));
+
+		@include adjust-font-size-to(scaled-value(3));
+	}
+}

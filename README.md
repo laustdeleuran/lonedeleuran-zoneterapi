@@ -14,8 +14,8 @@ We're using [Git Flow](http://nvie.com/posts/a-successful-git-branching-model/) 
 
 Clone the repo, then install the required node modules using `npm`.
 
-	$ git clone git@bitbucket.org:umwelt/roskilde.git
-	$ cd roskilde
+	$ git clone git@github.com:laustdeleuran/lonedeleuran-zoneterapi.git
+	$ cd lonedeleuran-zoneterapi
 	$ npm install
 
 If you don't have _npm_ installed, it's recommended to download it from [the official website](http://nodejs.org/).
@@ -29,7 +29,7 @@ Run the node server in the root of the project, then run gulp with livereload:
 	$ npm start
 	$ gulp
 
-The navigate your browser to [http://localhost:3000](http://localhost:3000) and the solution should be running. To  best mimmick the live environment, you need to map `local.roskilde-festival.dk` or similar to your `localhost` by [editing you hosts file](http://www.howtogeek.com/howto/27350/beginner-geek-how-to-edit-your-hosts-file/), as the FB app is limited to the `roskilde-festival.dk` domain.
+The navigate your browser to [http://localhost:3000](http://localhost:3000) and the solution should be running. To  best mimmick the live environment, you need to map `local.lonedeleuran.dk` or similar to your `localhost` by [editing you hosts file](http://www.howtogeek.com/howto/27350/beginner-geek-how-to-edit-your-hosts-file/), as the Google Maps API key is limited to the `lonedeleuran.dk` domain.
 
 
 

@@ -9,6 +9,8 @@
 
 	position: relative;
 
+	color: $color-black-dark;
+
 	background: $color-grey-light url(../images/content/banner-1.jpg) center center no-repeat;
 	background-size: cover;
 }
@@ -45,7 +47,7 @@
 }
 @include media(mobileH) {
 	.banner__content {
-		padding: em($base-line-height * 3) em($base-line-height) 0;
+		padding: em($base-line-height * 5) em($base-line-height) em($base-line-height * 2);
 		position: static;
 
 		@include transform(none);

@@ -57,7 +57,7 @@
 		text-align: left;
 	}
 }
-@include media(mobileH) {
+@include media(mobileV) {
 	.masthead__title {
 		em {
 			display: none;

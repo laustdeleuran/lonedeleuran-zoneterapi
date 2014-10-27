@@ -6,7 +6,7 @@
 */
 .masthead {
 	overflow: hidden;
-	padding: em($base-line-height * 2) em($base-line-height);
+	padding: em($base-line-height * 2) 0;
 }
 .masthead__title {
 	margin: 0;

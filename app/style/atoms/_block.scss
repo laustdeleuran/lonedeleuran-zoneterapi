@@ -11,7 +11,7 @@
 .block--color {
 	color: $color-white;
 
-	background-color: $color-green;
+	background: $color-green url(../images/ui/block-pattern-green.jpg);
 
 	a {
 		border-color: $color-white;

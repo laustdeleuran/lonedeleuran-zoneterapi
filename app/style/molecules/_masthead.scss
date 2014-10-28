@@ -6,7 +6,7 @@
 */
 .masthead {
 	overflow: hidden;
-	padding: em($base-line-height * 2) em($base-line-height);
+	padding: em($base-line-height * 2) 0;
 }
 .masthead__title {
 	margin: 0;
@@ -26,6 +26,7 @@
 }
 .masthead__nav {
 	overflow: hidden;
+	float: right;
 
 	text-align: right;
 }
@@ -54,10 +55,12 @@
 		}
 	}
 	.masthead__nav { 
+		float: none;
+
 		text-align: left;
 	}
 }
-@include media(mobileH) {
+@include media(360px) {
 	.masthead__title {
 		em {
 			display: none;

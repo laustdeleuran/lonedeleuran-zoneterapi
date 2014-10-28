@@ -10,9 +10,3 @@
 	max-width: $site-max-width;
 	min-width: $site-min-width;
 }
-@include media(mobileH) {
-	.wrapper {
-		margin: 0 auto;
-		padding: 0 em($base-line-height / 2);
-	}
-}

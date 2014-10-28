@@ -12,70 +12,72 @@ var defaults = {
 	zoomControlOptions: {
 		style: google.maps.ZoomControlStyle.SMALL
 	},
-	styles: [{ // http://snazzymaps.com/style/80/cool-grey
-		'featureType': 'landscape',
-		'elementType': 'labels',
-		'stylers': [{
-			'visibility': 'off'
-		}]
-	}, {
-		'featureType': 'transit',
-		'elementType': 'labels',
-		'stylers': [{
-			'visibility': 'off'
-		}]
-	}, {
-		'featureType': 'poi',
-		'elementType': 'labels',
-		'stylers': [{
-			'visibility': 'off'
-		}]
-	}, {
+	styles: [{
 		'featureType': 'water',
-		'elementType': 'labels',
 		'stylers': [{
-			'visibility': 'off'
+			'color': '#46bcec'
+		}, {
+			'visibility': 'on'
+		}]
+	}, {
+		'featureType': 'landscape',
+		'stylers': [{
+			'color': '#f2f2f2'
 		}]
 	}, {
 		'featureType': 'road',
+		'stylers': [{
+			'saturation': -100
+		}, {
+			'lightness': 45
+		}]
+	}, {
+		'featureType': 'road.highway',
+		'stylers': [{
+			'visibility': 'simplified'
+		}]
+	}, {
+		'featureType': 'road.arterial',
 		'elementType': 'labels.icon',
 		'stylers': [{
 			'visibility': 'off'
 		}]
 	}, {
-		'stylers': [{
-			'hue': '#00aaff'
-		}, {
-			'saturation': -100
-		}, {
-			'gamma': 2.15
-		}, {
-			'lightness': 12
-		}]
-	}, {
-		'featureType': 'road',
+		'featureType': 'administrative',
 		'elementType': 'labels.text.fill',
 		'stylers': [{
-			'visibility': 'on'
-		}, {
-			'lightness': 24
+			'color': '#444444'
 		}]
 	}, {
-		'featureType': 'road',
-		'elementType': 'geometry',
+		'featureType': 'transit',
 		'stylers': [{
-			'lightness': 57
+			'visibility': 'off'
+		}]
+	}, {
+		'featureType': 'poi',
+		'stylers': [{
+			'visibility': 'off'
 		}]
 	}]
 };
 
 $(window).load(function() {
 	$('[map]').each(function() {
-		var latLng = $(this).attr('map').split(','),
+		var $el = $(this),
+			latLng = $el.attr('map').split(','),
 			settings = $.extend({}, defaults, {
 				center: new google.maps.LatLng(parseFloat(latLng[0]), parseFloat(latLng[1])),
-			});
+			}),
+			map, marker;
 
-		new google.maps.Map(this, settings);
+		map = new google.maps.Map(this, settings);
+
+
+		marker = new google.maps.Marker({
+			position: new google.maps.LatLng(parseFloat(latLng[0]), parseFloat(latLng[1])),
+			map: map,
+			icon: '/images/ui/map-marker.png',
+			title: $el.attr('map-title')
+		});
 	});
 });

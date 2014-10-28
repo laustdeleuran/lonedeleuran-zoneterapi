@@ -26,6 +26,7 @@
 }
 .masthead__nav {
 	overflow: hidden;
+	float: right;
 
 	text-align: right;
 }
@@ -54,10 +55,12 @@
 		}
 	}
 	.masthead__nav { 
+		float: none;
+
 		text-align: left;
 	}
 }
-@include media(mobileV) {
+@include media(360px) {
 	.masthead__title {
 		em {
 			display: none;

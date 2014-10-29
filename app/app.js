@@ -10,3 +10,4 @@ require('./scripts/dev');
 
 // Get modules
 require('./scripts/modules/maps');
+require('./scripts/modules/scroll');

@@ -17,6 +17,10 @@
 		border-color: $color-white;
 		
 		color: $color-white;
+		
+		&[href^="tel:"] {
+			border-bottom-color: transparent;
+		}
 	}
 }
 // Media queries

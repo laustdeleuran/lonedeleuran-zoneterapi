@@ -20,4 +20,7 @@ a {
 
 		color: $color-green-dark;
 	}
+	&[href^="tel:"] {
+		border-bottom-color: transparent;
+	}
 }

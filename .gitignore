@@ -27,7 +27,6 @@ newrelic_agent.log
 .Trashes
 ehthumbs.db
 Thumbs.db
-*.sublime-project
 *.sublime-workspace
 
 # Build / Created content

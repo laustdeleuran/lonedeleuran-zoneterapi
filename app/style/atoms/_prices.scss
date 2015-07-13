@@ -1,0 +1,79 @@
+/**
+* Prices
+*
+* @section atoms
+* @author  ljd
+*/
+.prices {
+	margin: 0 auto;
+	padding: 0;
+	overflow: auto;
+}
+.prices__title {
+	@include trailer(2, scaled-value(5));
+	@include adjust-font-size-to(scaled-value(5));
+}
+.prices__desc {
+	display: block;
+
+	font-size: 1em;
+	font-weight: 300;
+	opacity: 0.67;
+	white-space: normal;
+}
+.prices__table {
+	width: 100%;
+
+	&,
+	tr {
+		padding: 0;
+		margin: 0;
+	}
+	tr {
+		border-top: 1px solid $color-grey-light;
+
+		&:first-child {
+			border-top: none;
+		}
+	}
+	th,
+	td {
+		padding: em($base-line-height);
+
+		text-align: left;
+		white-space: nowrap;
+		vertical-align: top;
+
+		&:first-child {
+			padding-left: 0;
+		}
+		&:last-child {
+			padding-right: 0;
+
+			text-align: right;
+		}
+	}
+}
+// Media queries 
+@include media(mobileH) {
+	.prices__title {
+		@include trailer(2, scaled-value(4));
+		@include adjust-font-size-to(scaled-value(4));
+	}
+	.prices__table {
+		&,
+		tr,
+		th,
+		td {
+			display: block;
+			padding: 0;
+
+			&:last-child {
+				text-align: left;
+			}
+		}
+		tr {
+			padding: em($base-line-height) 0;
+		}
+	}
+}

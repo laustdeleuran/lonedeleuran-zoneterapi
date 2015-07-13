@@ -14,6 +14,7 @@
 	display: inline-block;
 
 	font-weight: 300;
+	@include adjust-font-size-to(scaled-value(2));
 
 	&:hover,
 	&:focus,

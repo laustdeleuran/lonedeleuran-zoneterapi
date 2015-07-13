@@ -36,14 +36,14 @@
 		@include adjust-font-size-to(scaled-value(4), 2);
 	}
 }
-@include media(tabletV) {
+@include media(tabletH) {
 	.masthead__title {
 		em {
 			display: none;
 		}
 	}
 }
-@include media(mobileH) {
+@include media(700px) {
 	.masthead__title {
 		float: none;
 		@include trailer(1, scaled-value(4));
@@ -60,7 +60,7 @@
 		text-align: left;
 	}
 }
-@include media(360px) {
+@include media(480px) {
 	.masthead__title {
 		em {
 			display: none;

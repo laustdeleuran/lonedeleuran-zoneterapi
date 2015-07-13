@@ -49,7 +49,6 @@ var imagemin   = require('gulp-imagemin');
 var plumber    = require('gulp-plumber');
 var flatten    = require('flatten');
 var svgmin     = require('gulp-svgmin');
-var ngAnnotate = require('gulp-ng-annotate');
 var uglify     = require('gulp-uglify');
 var jshint     = require('gulp-jshint');
 var rimraf     = require('gulp-rimraf');
@@ -123,7 +122,6 @@ gulp.task('js', function(){
 				debug: !isProduction
 			})
 		)
-		.pipe(isProduction ? ngAnnotate() : gutil.noop())
 		.pipe(isProduction ? uglify() : gutil.noop())
 		.pipe(gulp.dest(paths.client.destDir));
 });

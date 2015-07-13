@@ -16,9 +16,3 @@ html,
 body {
 	min-width: $site-min-width;
 }
-// Media queries
-@include media(tabletH) {
-	html {
-		font-size: 112.5%
-	}
-}

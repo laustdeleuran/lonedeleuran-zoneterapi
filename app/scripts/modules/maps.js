@@ -8,6 +8,7 @@ var defaults = {
 	mapTypeId: google.maps.MapTypeId.ROADMAP,
 	mapTypeControl: false,
 	streetViewControl: false,
+	scrollwheel: false,
 	zoomControl: true,
 	zoomControlOptions: {
 		style: google.maps.ZoomControlStyle.SMALL

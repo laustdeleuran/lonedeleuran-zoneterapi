@@ -98,25 +98,43 @@ $rythm-scale: 0.75, 0.844, 1.126, 1.5, 2, 2.666, 4.209 !default; // a bastardise
 	}
 }
 // Mixin for scrolling shadows - http://codepen.io/laustdeleuran/pen/DBaAu
-@mixin scrolling-shadows($background-color: rgb(255, 255, 255), $shadow-intensity: 0.2, $shadow-color: rgb(0,0,0), $cover-size: 40px, $shadow-size: 14px) {
+@mixin scrolling-shadows($direction: Y, $background-color: rgb(255, 255, 255), $shadow-intensity: 0.2, $shadow-color: rgb(0,0,0), $cover-size: 40px, $shadow-size: 14px) {
 
-	@include background-image(
-		// Shadow covers 
-		linear-gradient(to bottom, $background-color 30%, rgba($background-color, 0)),
-		linear-gradient(to bottom, rgba($background-color, 0), $background-color 70%),
+	@if $direction == X {
+		@include background-image(
+			// Shadow covers 
+			linear-gradient(to right, $background-color 30%, rgba($background-color, 0)),
+			linear-gradient(to right, rgba($background-color, 0), $background-color 70%),
+			// Shadows 
+			radial-gradient(farthest-side at 0 50%, rgba($shadow-color, $shadow-intensity), rgba($shadow-color, 0)),
+			radial-gradient(farthest-side at 100% 50%, rgba($shadow-color, $shadow-intensity), rgba($shadow-color, 0))
+		);
+		background-repeat: no-repeat;
+		background-color: $background-color;
+		background-size: $cover-size 100%, $cover-size 100%, $shadow-size 100%, $shadow-size 100%;
+		background-position: 0 0, 100% 0, 0 0, 100% 0;
 
-		// Shadows 
-		radial-gradient(farthest-side at 50% 0, rgba($shadow-color, $shadow-intensity), rgba($shadow-color, 0)),
-		radial-gradient(farthest-side at 50% 100%, rgba($shadow-color, $shadow-intensity), rgba($shadow-color, 0))
-	);
-	background-repeat: no-repeat;
-	background-color: $background-color;
-	background-size: 100% $cover-size, 100% $cover-size, 100% $shadow-size, 100% $shadow-size;
-	background-position: 0 0, 0 100%, 0 0, 0 100%;
+		// Opera doesn't support this in the shorthand 
+		background-attachment: local, local, scroll, scroll;
+	} @else {
+		@include background-image(
+			// Shadow covers 
+			linear-gradient(to bottom, $background-color 30%, rgba($background-color, 0)),
+			linear-gradient(to bottom, rgba($background-color, 0), $background-color 70%),
+			// Shadows 
+			radial-gradient(farthest-side at 50% 0, rgba($shadow-color, $shadow-intensity), rgba($shadow-color, 0)),
+			radial-gradient(farthest-side at 50% 100%, rgba($shadow-color, $shadow-intensity), rgba($shadow-color, 0))
+		);
+		background-repeat: no-repeat;
+		background-color: $background-color;
+		background-size: 100% $cover-size, 100% $cover-size, 100% $shadow-size, 100% $shadow-size;
+		background-position: 0 0, 0 100%, 0 0, 0 100%;
 
-	// Opera doesn't support this in the shorthand 
-	background-attachment: local, local, scroll, scroll;
+		// Opera doesn't support this in the shorthand 
+		background-attachment: local, local, scroll, scroll;
+	}
 }
+
 // CSS Arrows mixin // https://gist.github.com/bpainter/1085320
 @mixin arrow($direction, $color, $size) {
 	display:block;
